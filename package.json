@@ -1,0 +1,90 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "run-p start:**",
+    "start:client": "webpack-dev-server --mode development --env.ENVIRONMENT=development",
+    "start:server": "NODE_ENV=development nodemon api/index.js",
+    "build": "webpack --mode production --env.ENVIRONMENT=production",
+    "deploy": "NODE_ENV=production node api/index.js",
+    "lint": "eslint .",
+    "lint:write": "eslint . --fix",
+    "heroku-postbuild": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": "10"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint": "^5.16.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.4.0",
+    "image-webpack-loader": "^4.6.0",
+    "lint-staged": "^8.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.3",
+    "url-loader": "^1.1.2",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1",
+    "webpack": "^4.33.0"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.17",
+    "@material-ui/core": "^4.0.2",
+    "@material-ui/icons": "^4.0.1",
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express-validator": "^5.3.1",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "history": "^4.9.0",
+    "morgan": "^1.9.1",
+    "prop-types": "^15.7.2",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react": "^16.8.6",
+    "ytdl-core": "^0.29.2"
+  }
+}

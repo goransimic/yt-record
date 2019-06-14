@@ -1,0 +1,4 @@
+export const appConstants = {
+  SEND_NOTIFICATION: 'APP_SEND_NOTIFICATION',
+  TOGGLE_LOADER: 'APP_TOGGLE_LOADER'
+};
