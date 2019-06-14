@@ -1,6 +1,6 @@
 # YT Record
 
-Record MP# from YouTube.
+Record MP3 from YouTube.
 
 ## License
 
