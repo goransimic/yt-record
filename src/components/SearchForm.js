@@ -9,7 +9,7 @@ import { useDispatch, appConstants, videoConstants } from '@/store';
 import { history, useForm } from '@/helpers';
 import { videoService } from '@/services';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   form: {
     width: '100%'
   }

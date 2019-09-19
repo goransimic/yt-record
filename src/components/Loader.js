@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { useStore } from '@/store';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   loader: {
     position: 'fixed',
     top: 0,
